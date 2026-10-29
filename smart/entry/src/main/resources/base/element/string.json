@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "星闪灾后救援指挥系统"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "星闪救援指挥中心"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "星闪救援"
+    }
+  ]
+}

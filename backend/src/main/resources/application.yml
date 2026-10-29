@@ -1,0 +1,47 @@
+server:
+  port: 8088
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: starflash-rescue-backend
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/starflash_rescue?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema-mysql.sql
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+huaweicloud:
+  iotda:
+    enabled: ${HUAWEI_IOTDA_ENABLED:false}
+    ak: ${HUAWEICLOUD_SDK_AK:}
+    sk: ${HUAWEICLOUD_SDK_SK:}
+    project-id: ${HUAWEI_PROJECT_ID:878edd31b8614d428d68d1f56ba9acdc}
+    region: ${HUAWEI_IOTDA_REGION:cn-north-4}
+    endpoint: ${HUAWEI_IOTDA_ENDPOINT:}
+    device-id: ${HUAWEI_IOTDA_DEVICE_ID:6a30e6ffcbb0cf6bb965ab80_shouzai}
+    device-ids: ${HUAWEI_IOTDA_DEVICE_IDS:6a30e6ffcbb0cf6bb965ab80_shouzai,6a30e6ffcbb0cf6bb965ab80_jiu_yuan}
+    instance-id: ${HUAWEI_IOTDA_INSTANCE_ID:ff1fe1ecbb}
+    service-id: ${HUAWEI_IOTDA_SERVICE_ID:environment}
+
+rescue:
+  site-id: SITE-ALPHA
+  site-name: 星闪灾后救援联合演练现场
+
+zhipu:
+  base-url: ${ZHIPU_BASE_URL:https://open.bigmodel.cn}
+  api-key: ${ZHIPU_API_KEY:}
+  model: ${ZHIPU_MODEL:glm-4.7-flash}

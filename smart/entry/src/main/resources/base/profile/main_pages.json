@@ -1,0 +1,14 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/DashboardPage",
+    "pages/VictimsPage",
+    "pages/VictimDetailPage",
+    "pages/RescuersPage",
+    "pages/TasksPage",
+    "pages/AlertsPage",
+    "pages/DevicesPage",
+    "pages/AIChatPage",
+    "pages/SettingsPage"
+  ]
+}

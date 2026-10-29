@@ -1,0 +1,9 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "星闪救援 - 应用入口模块",
+  "main": "",
+  "author": "StarFlash Rescue Team",
+  "license": "ISC",
+  "dependencies": {}
+}

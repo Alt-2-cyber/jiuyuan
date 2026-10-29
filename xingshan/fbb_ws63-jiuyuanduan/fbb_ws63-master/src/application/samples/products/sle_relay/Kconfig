@@ -1,0 +1,35 @@
+#===============================================================================
+# @brief    SLE static relay sample Kconfig
+#===============================================================================
+
+choice
+    prompt "Select SLE relay board role"
+    default SAMPLE_SUPPORT_SLE_RELAY_NODE
+    depends on SAMPLE_SUPPORT_SLE_RELAY
+
+    config SAMPLE_SUPPORT_SLE_RELAY_ROOT
+        bool "Root server board"
+
+    config SAMPLE_SUPPORT_SLE_RELAY_NODE
+        bool "Relay board"
+
+    config SAMPLE_SUPPORT_SLE_RELAY_LEAF
+        bool "Leaf terminal board"
+
+    config SAMPLE_SUPPORT_SLE_RELAY_MESH
+        bool "Self-organizing mesh board"
+endchoice
+
+config SLE_RELAY_UART_BUS
+    int
+    prompt "Set UART bus used by optional local bridge."
+    default 0
+    depends on SAMPLE_SUPPORT_SLE_RELAY
+
+config SUPPORT_SLE_PERIPHERAL
+    bool
+    default y if (SAMPLE_SUPPORT_SLE_RELAY_ROOT || SAMPLE_SUPPORT_SLE_RELAY_NODE || SAMPLE_SUPPORT_SLE_RELAY_MESH)
+
+config SUPPORT_SLE_CENTRAL
+    bool
+    default y if (SAMPLE_SUPPORT_SLE_RELAY_NODE || SAMPLE_SUPPORT_SLE_RELAY_LEAF || SAMPLE_SUPPORT_SLE_RELAY_MESH)
