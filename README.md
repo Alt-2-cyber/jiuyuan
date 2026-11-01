@@ -81,15 +81,6 @@ GET  /api/tasks
 POST /api/tasks/{taskId}/assign
 POST /api/device-ingest/rescue-terminal
 ```
-
-## 推荐落地路线
-
-1. 两块星闪板子完成互联、广播、测距和屏幕距离显示。
-2. 接入血氧、心率、血压趋势、温湿度、可燃气体等传感器。
-3. 实现救援人员终端的方向箭头、环境报警和任务锁定。
-4. 建设 Spring Boot 后端、MySQL 数据库、Vue3 指挥后台。
-5. 加入现场网关、多锚点定位、断网缓存、救援复盘和工程校准流程。
-
 ## 技术栈
 
 - 设备端：星闪 NearLink、PPG 生命体征传感器、IMU、环境传感器、屏幕 UI。
